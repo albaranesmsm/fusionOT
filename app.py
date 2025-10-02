@@ -6,7 +6,7 @@ from io import BytesIO
 def load_maestro(file_path="maestro_instalaciones.xlsx"):
    return pd.read_excel(file_path)  # Instalación | Referencia | Descripción | Cantidad
 maestro = load_maestro()
-st.title("Generador de materiales Work Order")
+st.title("Plantilla de instalaciones")
 # --- 1. Selección de Operación ---
 operacion = st.selectbox("Operación", ["10", "20", "30", "40"])
 # --- 2. Selección de Instalaciones ---
@@ -67,3 +67,4 @@ if not resultado.empty:
            file_name="work_order.xlsx",
            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
        )
+
